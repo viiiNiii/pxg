@@ -30,63 +30,78 @@
 <body>
     <table id="rankTable"></table>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-
-            const images = {
-                "BANANA": "link_da_imagem_banana",
-                "BLOOD HERB": "link_da_imagem_blood_herb",
-                "ASPEAR SEED": "link_da_imagem_aspear_seed",
-                "BABIRI SEED": "link_da_imagem_babiri_seed",
-                "JAPANESE BONSAI": "link_da_imagem_bonsai",
-                "PECHA SEED": "link_da_imagem_pecha_seed",
-                "CHERI SEED": "link_da_imagem_cheri_seed",
-                "CHIP 3.0": "link_da_imagem_chip_3",
-                "CHARTI SEED": "link_da_imagem_charti_seed",
-                "LUM SEED": "link_da_imagem_lum_seed",
-                "RAWST SEED": "link_da_imagem_rawst_seed",
-                "CHESTO SEED": "link_da_imagem_chesto_seed",
-                "POKEDEX 1GEN": "link_da_imagem_pokedex_1",
-                "CHILAN SEED": "link_da_imagem_chilan_seed",
-                "MECHA CHIP": "link_da_imagem_mecha_chip",
-                "YACHE SEED": "https://b4a2235098.clvaw-cdnwnd.com/479164401b6f85d1f636090618b171bb/200004451-072a908250/berrie7.png",
-                "TANGA SEED": "https://b4a2235098.clvaw-cdnwnd.com/479164401b6f85d1f636090618b171bb/200004467-58aad59a45/berrie23.png",
-                "COLBUR SEED": "https://b4a2235098.clvaw-cdnwnd.com/479164401b6f85d1f636090618b171bb/200004456-a483da677c/berrie12.png"
+    document.addEventListener("DOMContentLoaded", function() {
+        const images = {
+            "BANANA": "link_da_imagem_banana",
+            "BLOOD HERB": "link_da_imagem_blood_herb",
+            "ASPEAR SEED": "link_da_imagem_aspear_seed",
+            "BABIRI SEED": "link_da_imagem_babiri_seed",
+            "JAPANESE BONSAI": "link_da_imagem_bonsai",
+            "PECHA SEED": "link_da_imagem_pecha_seed",
+            "CHERI SEED": "link_da_imagem_cheri_seed",
+            "CHIP 3.0": "link_da_imagem_chip_3",
+            "CHARTI SEED": "link_da_imagem_charti_seed",
+            "LUM SEED": "link_da_imagem_lum_seed",
+            "RAWST SEED": "link_da_imagem_rawst_seed",
+            "CHESTO SEED": "link_da_imagem_chesto_seed",
+            "POKEDEX 1GEN": "link_da_imagem_pokedex_1",
+            "CHILAN SEED": "link_da_imagem_chilan_seed",
+            "MECHA CHIP": "link_da_imagem_mecha_chip",
+            "YACHE SEED": "https://b4a2235098.clvaw-cdnwnd.com/479164401b6f85d1f636090618b171bb/200004451-072a908250/berrie7.png",
+            "TANGA SEED": "https://b4a2235098.clvaw-cdnwnd.com/479164401b6f85d1f636090618b171bb/200004467-58aad59a45/berrie23.png",
+            "COLBUR SEED": "https://b4a2235098.clvaw-cdnwnd.com/479164401b6f85d1f636090618b171bb/200004456-a483da677c/berrie12.png"
         };
-            const data = [
-                ["RANK - E", "RANK - D", "RANK - C", "RANK - B", "RANK - A"],
-                ["BANANA", "BLOOD HERB", "ASPEAR SEED", "BABIRI SEED", "JAPANESE BONSAI"],
-                ["PECHA SEED", "CHERI SEED", "CHIP 3.0", "CHARTI SEED", "LUM SEED"],
-                ["RAWST SEED", "CHESTO SEED", "POKEDEX 1GEN", "CHILAN SEED", "MECHA CHIP"],
-                ["", "CHIP 2.0", "POKEDEX 2GEN", "CHOPLE SEED", "POKEDEX 5GEN"],
-                ["", "MINOR SEED BAG", "", "COLBA SEED", "POKEDEX 6GEN"],
-                ["", "NOMEL SEED", "", "COLBUR SEED", "RESTORE POTION"],
-                ["", "PERSIM SEED", "", "HABAN SEED", "SITRUS SEED"],
-                ["", "RED STUDENT MONITOR", "", "KASIB SEED", "SOUL SOURCE"],
-                ["", "", "", "KEBIA SEED", ""],
-                ["", "", "", "OCCA SEED", ""],
-                ["", "", "", "PASSHO SEED", ""],
-                ["", "", "", "PAYAPA SEED", ""],
-                ["", "", "", "POKEDEX 3GEN", ""],
-                ["", "", "", "POKEDEX 4GEN", ""],
-                ["", "", "", "RINDO SEED", ""],
-                ["", "", "", "ROSELI SEED", ""],
-                ["", "", "", "SHUCA SEED", ""],
-                ["", "", "", "TANGA SEED", ""],
-                ["", "", "", "WACAN SEED", ""],
-                ["", "", "", "YACHE SEED", ""]
-            ];
 
-            const table = document.getElementById("rankTable");
-            data.forEach(rowData => {
-                let row = document.createElement("tr");
-                rowData.forEach(cellData => {
-                    let cell = document.createElement(rowData === data[0] ? "th" : "td");
+        const data = [
+            ["RANK - E", "RANK - D", "RANK - C", "RANK - B", "RANK - A"],
+            ["BANANA", "BLOOD HERB", "ASPEAR SEED", "BABIRI SEED", "JAPANESE BONSAI"],
+            ["PECHA SEED", "CHERI SEED", "CHIP 3.0", "CHARTI SEED", "LUM SEED"],
+            ["RAWST SEED", "CHESTO SEED", "POKEDEX 1GEN", "CHILAN SEED", "MECHA CHIP"],
+            ["", "CHIP 2.0", "POKEDEX 2GEN", "CHOPLE SEED", "POKEDEX 5GEN"],
+            ["", "MINOR SEED BAG", "", "COLBA SEED", "POKEDEX 6GEN"],
+            ["", "NOMEL SEED", "", "COLBUR SEED", "RESTORE POTION"],
+            ["", "PERSIM SEED", "", "HABAN SEED", "SITRUS SEED"],
+            ["", "RED STUDENT MONITOR", "", "KASIB SEED", "SOUL SOURCE"],
+            ["", "", "", "KEBIA SEED", ""],
+            ["", "", "", "OCCA SEED", ""],
+            ["", "", "", "PASSHO SEED", ""],
+            ["", "", "", "PAYAPA SEED", ""],
+            ["", "", "", "POKEDEX 3GEN", ""],
+            ["", "", "", "POKEDEX 4GEN", ""],
+            ["", "", "", "RINDO SEED", ""],
+            ["", "", "", "ROSELI SEED", ""],
+            ["", "", "", "SHUCA SEED", ""],
+            ["", "", "", "TANGA SEED", ""],
+            ["", "", "", "WACAN SEED", ""],
+            ["", "", "", "YACHE SEED", ""]
+        ];
+
+        const table = document.getElementById("rankTable");
+        data.forEach(rowData => {
+            let row = document.createElement("tr");
+            rowData.forEach(cellData => {
+                let cell = document.createElement(rowData === data[0] ? "th" : "td");
+                
+                if (cellData && images[cellData]) {
+                    let img = document.createElement("img");
+                    img.src = images[cellData];
+                    img.alt = cellData;
+                    img.style.width = "20px";
+                    img.style.marginRight = "5px";
+
+                    let text = document.createTextNode(cellData);
+                    cell.appendChild(img);
+                    cell.appendChild(text);
+                } else {
                     cell.textContent = cellData;
-                    row.appendChild(cell);
-                });
-                table.appendChild(row);
+                }
+
+                row.appendChild(cell);
             });
+            table.appendChild(row);
         });
-    </script>
+    });
+</script>
+
 </body>
 </html>
