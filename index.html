@@ -71,43 +71,16 @@
         margin-bottom: 20px;
     }
 
-    /* Cards participantes */
-    .participants {
-        display: grid;
-        grid-template-columns: repeat(auto-fill,minmax(140px,1fr));
-        gap: 15px;
-    }
-    .card {
-        background: #fff;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        text-align: center;
-        padding: 10px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        cursor: default;
-    }
-    .card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    }
-    .card img {
-        border-radius: 50%;
-        width: 80px;
-        height: 80px;
-        object-fit: cover;
-        margin-bottom: 8px;
-    }
-    .card p {
-        margin: 0;
-        font-weight: bold;
-        font-size: 1em;
+    /* Lista de participantes sem imagens */
+    .participants-list {
+        list-style: none;
+        padding-left: 0;
+        font-size: 1.1em;
         color: #004080;
     }
-    .card small {
-        display: block;
-        color: #666;
-        font-weight: normal;
-        margin-top: 2px;
+    .participants-list li {
+        padding: 6px 0;
+        border-bottom: 1px solid #ddd;
     }
 
     /* Nota do projeto */
@@ -146,6 +119,7 @@
         <a href="#apresentacao">Apresentação</a>
         <a href="#infosProjeto">Projeto</a>
         <a href="#participantes">Participantes</a>
+        <a href="#contextoPessoal">Contexto Pessoal</a>
         <a href="#avaliacao">Avaliação</a>
         <a href="#contato">Contato</a>
     </nav>
@@ -172,56 +146,34 @@
 
     <section id="participantes">
         <h2>Participantes</h2>
-        <div class="participants">
-            <!-- Participantes -->
-            <div class="card">
-                <img src="https://randomuser.me/api/portraits/men/12.jpg" alt="Vitor Raphael" />
-                <p>Vitor Raphael</p><small>24 anos</small>
-            </div>
-            <div class="card">
-                <img src="https://randomuser.me/api/portraits/men/15.jpg" alt="Felipe Gabriel" />
-                <p>Felipe Gabriel</p><small>18 anos</small>
-            </div>
-            <div class="card">
-                <img src="https://randomuser.me/api/portraits/women/25.jpg" alt="Thamires Tenorio" />
-                <p>Thamires Tenorio</p><small>24 anos</small>
-            </div>
-            <div class="card">
-                <img src="https://randomuser.me/api/portraits/men/17.jpg" alt="Antony da Cruz" />
-                <p>Antony da Cruz</p><small>20 anos</small>
-            </div>
-            <div class="card">
-                <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Maya" />
-                <p>Maya</p><small>2 anos</small>
-            </div>
-            <div class="card">
-                <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Larissa Rodrigues" />
-                <p>Larissa Rodrigues</p><small>20 anos</small>
-            </div>
-            <div class="card">
-                <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Marina Rodrigues" />
-                <p>Marina Rodrigues</p><small>26 anos</small>
-            </div>
-            <div class="card">
-                <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Maria do Carmo Noronha de Souza" />
-                <p>Maria do Carmo Noronha de Souza</p><small>80 anos</small>
-            </div>
-            <div class="card">
-                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Roberto Rodrigues" />
-                <p>Roberto Rodrigues</p><small>22 anos</small>
-            </div>
-            <div class="card">
-                <img src="https://randomuser.me/api/portraits/men/40.jpg" alt="Lucca Yuji" />
-                <p>Lucca Yuji</p><small>24 anos</small>
-            </div>
-        </div>
+        <ul class="participants-list">
+            <li>Vitor Raphael - 24 anos</li>
+            <li>Felipe Gabriel - 18 anos</li>
+            <li>Thamires Tenorio - 24 anos</li>
+            <li>Antony da Cruz - 20 anos</li>
+            <li>Maya - 2 anos</li>
+            <li>Larissa Rodrigues - 20 anos</li>
+            <li>Marina Rodrigues - 26 anos</li>
+            <li>Maria do Carmo Noronha de Souza - 80 anos</li>
+            <li>Roberto Rodrigues - 22 anos</li>
+            <li>Lucca Yuji - 24 anos</li>
+        </ul>
+    </section>
+
+    <section id="contextoPessoal">
+        <h2>Contexto Pessoal - Matheus Vinicius</h2>
+        <p>
+            Matheus Vinicius é considerado uma pessoa com deficiência física e visual, nascendo com pé torto e apresentando ceratocone, condição que exigiu o uso de lentes de grau 14. Ao longo da vida, enfrentou diversas dificuldades para enxergar, mas após uma operação e uso contínuo de lentes, conseguiu melhorar significativamente sua visão.
+        </p>
+        <p>
+            Com dedicação à educação e ao domínio da tecnologia, especialmente computadores, Matheus superou desafios pessoais, tornando-se uma pessoa ativa e participativa na sociedade. Essa experiência fortalece seu compromisso com a inclusão social e a promoção de acessibilidade em seus projetos.
+        </p>
     </section>
 
     <section id="avaliacao">
         <h2>Avaliação do Projeto</h2>
         <p>O projeto foi avaliado com a nota abaixo, considerando impacto social, participação e organização:</p>
         <div class="rating" aria-label="Nota do projeto">
-            <!-- Estrelas preenchidas usando JS -->
             <span id="stars">★★★★★</span>
         </div>
         <p><em>Comentários:</em> Excelente iniciativa, com impacto positivo e engajamento significativo da comunidade.</p>
@@ -251,11 +203,6 @@
     toTopBtn.addEventListener('click', () => {
         window.scrollTo({top: 0, behavior: 'smooth'});
     });
-
-    // Exemplo simples para alterar as estrelas de avaliação (5 estrelas cheias)
-    // Se quiser deixar dinâmico, pode alterar aqui.
-    const starsElem = document.getElementById('stars');
-    // starsElem.textContent = '★★★★☆'; // Exemplo para 4 estrelas e meia
 </script>
 
 </body>
