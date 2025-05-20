@@ -1,109 +1,146 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabela Rank</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projeto Extensionista - Matheus Vinicius</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f4f4f4;
+            margin: 0;
+            line-height: 1.6;
+            background: #f9f9f9;
+            color: #333;
         }
-        table {
-            width: 80%;
-            margin: 50px auto;
-            border-collapse: collapse;
-            background: white;
-            border: 1px solid #ddd;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 10px;
-        }
-        th {
-            background: #f8b400;
+        header {
+            background-color: #004080;
             color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 0 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #004080;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 15px;
+            border-radius: 5px;
+        }
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            background: #004080;
+            color: white;
+            font-size: 0.9em;
+        }
+        a {
+            color: #004080;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .image-credit {
+            font-size: 0.8em;
+            color: #666;
+            margin-top: 4px;
+        }
+        @media (max-width: 600px) {
+            main {
+                margin: 10px;
+                padding: 15px;
+            }
         }
     </style>
 </head>
 <body>
-    <table id="rankTable"></table>
-    <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const images = {
-            "BANANA": "link_da_imagem_banana",
-            "BLOOD HERB": "link_da_imagem_blood_herb",
-            "ASPEAR SEED": "https://b4a2235098.clvaw-cdnwnd.com/479164401b6f85d1f636090618b171bb/200005226-d8f01dae3f/aspear%20berrie.png",
-            "BABIRI SEED": "link_da_imagem_babiri_seed",
-            "JAPANESE BONSAI": "link_da_imagem_bonsai",
-            "PECHA SEED": "https://b4a2235098.clvaw-cdnwnd.com/479164401b6f85d1f636090618b171bb/200004446-ed1f2ee18b/berrie2.png",
-            "CHERI SEED": "link_da_imagem_cheri_seed",
-            "CHIP 3.0": "link_da_imagem_chip_3",
-            "CHARTI SEED": "link_da_imagem_charti_seed",
-            "LUM SEED": "https://b4a2235098.clvaw-cdnwnd.com/479164401b6f85d1f636090618b171bb/200004446-ed1f2ee18b/berrie2.png",
-            "RAWST SEED": "https://b4a2235098.clvaw-cdnwnd.com/479164401b6f85d1f636090618b171bb/200004462-4704348f81/berrie18.png",
-            "CHESTO SEED": "https://b4a2235098.clvaw-cdnwnd.com/479164401b6f85d1f636090618b171bb/200004464-dc9f2de919/berrie20.png",
-            "POKEDEX 1GEN": "link_da_imagem_pokedex_1",
-            "CHILAN SEED": "https://b4a2235098.clvaw-cdnwnd.com/479164401b6f85d1f636090618b171bb/200004458-5803959f6d/berrie14.png",
-            "MECHA CHIP": "https://media.discordapp.net/attachments/1346870974280110210/1346870984723927171/Mecha_Chip.png?ex=67c9c2da&is=67c8715a&hm=274ba3baaf8055351bbd00f31caa4023e10ef128ca5d87ac927463a70197085e&=&format=webp&quality=lossless",
-            "YACHE SEED": "https://b4a2235098.clvaw-cdnwnd.com/479164401b6f85d1f636090618b171bb/200004451-072a908250/berrie7.png",
-            "TANGA SEED": "https://b4a2235098.clvaw-cdnwnd.com/479164401b6f85d1f636090618b171bb/200004467-58aad59a45/berrie23.png",
-            "COLBUR SEED": "https://b4a2235098.clvaw-cdnwnd.com/479164401b6f85d1f636090618b171bb/200004456-a483da677c/berrie12.png",
-            "PASSHO SEED": "https://b4a2235098.clvaw-cdnwnd.com/479164401b6f85d1f636090618b171bb/200004447-bd3debdf93/berrie3.png"
-            
-        };
+    <header>
+        <h1>Projeto Extensionista - Matheus Vinicius</h1>
+        <p>Curso: Análise e Desenvolvimento de Sistemas - Cruzeiro do Sul (EAD)</p>
+    </header>
+    <main>
+        <section id="apresentacao">
+            <h2>Apresentação</h2>
+            <p>
+                Esta página apresenta o relatório do Projeto Extensionista desenvolvido por Matheus Vinicius, estudante do curso de Análise e Desenvolvimento de Sistemas da Universidade Cruzeiro do Sul (EAD).
+                O projeto visa promover a interação entre a universidade e a comunidade local, contribuindo para a melhoria social e educativa, conforme os Objetivos de Desenvolvimento Sustentável (ODS).
+            </p>
+            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=60" alt="Comunidade e Educação" />
+            <div class="image-credit">Foto por <a href="https://unsplash.com/@anniespratt" target="_blank">Annie Spratt</a> no Unsplash</div>
+        </section>
 
-        const data = [
-            ["RANK - E", "RANK - D", "RANK - C", "RANK - B", "RANK - A"],
-            ["BANANA", "BLOOD HERB", "ASPEAR SEED", "BABIRI SEED", "JAPANESE BONSAI"],
-            ["PECHA SEED", "CHERI SEED", "CHIP 3.0", "CHARTI SEED", "LUM SEED"],
-            ["RAWST SEED", "CHESTO SEED", "POKEDEX 1GEN", "CHILAN SEED", "MECHA CHIP"],
-            ["", "CHIP 2.0", "POKEDEX 2GEN", "CHOPLE SEED", "POKEDEX 5GEN"],
-            ["", "MINOR SEED BAG", "", "COLBA SEED", "POKEDEX 6GEN"],
-            ["", "NOMEL SEED", "", "COLBUR SEED", "RESTORE POTION"],
-            ["", "PERSIM SEED", "", "HABAN SEED", "SITRUS SEED"],
-            ["", "RED STUDENT MONITOR", "", "KASIB SEED", "SOUL SOURCE"],
-            ["", "", "", "KEBIA SEED", ""],
-            ["", "", "", "OCCA SEED", ""],
-            ["", "", "", "PASSHO SEED", ""],
-            ["", "", "", "PAYAPA SEED", ""],
-            ["", "", "", "POKEDEX 3GEN", ""],
-            ["", "", "", "POKEDEX 4GEN", ""],
-            ["", "", "", "RINDO SEED", ""],
-            ["", "", "", "ROSELI SEED", ""],
-            ["", "", "", "SHUCA SEED", ""],
-            ["", "", "", "TANGA SEED", ""],
-            ["", "", "", "WACAN SEED", ""],
-            ["", "", "", "YACHE SEED", ""]
-        ];
+        <section id="objetivos">
+            <h2>Objetivos do Projeto</h2>
+            <p>
+                O projeto tem como objetivos principais:
+                <ul>
+                    <li>Garantir acesso à educação inclusiva, equitativa e de qualidade (ODS 4).</li>
+                    <li>Promover ações que incentivem a participação da comunidade em atividades educativas e culturais.</li>
+                    <li>Desenvolver competências acadêmicas e socioemocionais para o estudante e a comunidade.</li>
+                </ul>
+            </p>
+            <img src="https://cdn.pixabay.com/photo/2018/05/01/00/14/sustainable-development-3367509_1280.jpg" alt="ODS 4 - Educação de Qualidade" />
+            <div class="image-credit">Imagem por <a href="https://pixabay.com/users/geralt-9301/" target="_blank">geralt</a> no Pixabay</div>
+        </section>
 
-        const table = document.getElementById("rankTable");
-        data.forEach(rowData => {
-            let row = document.createElement("tr");
-            rowData.forEach(cellData => {
-                let cell = document.createElement(rowData === data[0] ? "th" : "td");
-                
-                if (cellData && images[cellData]) {
-                    let img = document.createElement("img");
-                    img.src = images[cellData];
-                    img.alt = cellData;
-                    img.style.width = "20px";
-                    img.style.marginRight = "5px";
+        <section id="desenvolvimento">
+            <h2>Desenvolvimento do Projeto</h2>
+            <p>
+                Durante o semestre, foram realizadas diversas atividades presenciais e online com a comunidade local, que incluíram:
+                <ul>
+                    <li>Mapeamento das necessidades da comunidade;</li>
+                    <li>Elaboração de oficinas educativas;</li>
+                    <li>Promoção de campanhas sobre a importância da educação inclusiva;</li>
+                    <li>Interação contínua para acompanhamento e avaliação das ações.</li>
+                </ul>
+            </p>
+            <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=60" alt="Oficina comunitária" />
+            <div class="image-credit">Foto por <a href="https://unsplash.com/@kobby_dagan" target="_blank">Kobby Mendez</a> no Unsplash</div>
+        </section>
 
-                    let text = document.createTextNode(cellData);
-                    cell.appendChild(img);
-                    cell.appendChild(text);
-                } else {
-                    cell.textContent = cellData;
-                }
+        <section id="resultados">
+            <h2>Resultados Alcançados</h2>
+            <p>
+                O projeto proporcionou benefícios importantes, tais como:
+                <ul>
+                    <li>Maior acesso à informação e conscientização da comunidade sobre educação inclusiva;</li>
+                    <li>Desenvolvimento de habilidades sociais e técnicas para os participantes;</li>
+                    <li>Fortalecimento dos laços entre universidade e comunidade;</li>
+                    <li>Experiência enriquecedora para a formação acadêmica e cidadã do estudante.</li>
+                </ul>
+            </p>
+            <img src="https://cdn.pixabay.com/photo/2017/06/20/19/11/group-2425125_1280.jpg" alt="Comunidade reunida" />
+            <div class="image-credit">Imagem por <a href="https://pixabay.com/users/jarmoluk-665945/" target="_blank">jarmoluk</a> no Pixabay</div>
+        </section>
 
-                row.appendChild(cell);
-            });
-            table.appendChild(row);
-        });
-    });
-</script>
+        <section id="autoavaliacao">
+            <h2>Autoavaliação</h2>
+            <p>
+                A realização deste projeto apresentou desafios, como a necessidade de adaptar as ações às características específicas da comunidade e a limitação de recursos financeiros. No entanto, as aprendizagens foram significativas, tanto na prática extensionista quanto no desenvolvimento pessoal.
+                Recomenda-se maior planejamento financeiro e ampliação das parcerias para fortalecer futuras ações.
+            </p>
+        </section>
 
+        <section id="contato">
+            <h2>Contato</h2>
+            <p>Matheus Vinicius - Estudante de Análise e Desenvolvimento de Sistemas - Cruzeiro do Sul (EAD)</p>
+            <p>Email: <a href="mailto:matheus.vinicius@email.com">matheus.vinicius@email.com</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Matheus Vinicius - Projeto Extensionista</p>
+    </footer>
 </body>
 </html>
