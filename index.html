@@ -1,146 +1,262 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Projeto Extensionista - Matheus Vinicius</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            line-height: 1.6;
-            background: #f9f9f9;
-            color: #333;
-        }
-        header {
-            background-color: #004080;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-        main {
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 0 20px;
-            background: white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h1, h2, h3 {
-            color: #004080;
-        }
-        section {
-            margin-bottom: 40px;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            margin-top: 15px;
-            border-radius: 5px;
-        }
-        footer {
-            text-align: center;
-            padding: 15px 0;
-            background: #004080;
-            color: white;
-            font-size: 0.9em;
-        }
-        a {
-            color: #004080;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .image-credit {
-            font-size: 0.8em;
-            color: #666;
-            margin-top: 4px;
-        }
-        @media (max-width: 600px) {
-            main {
-                margin: 10px;
-                padding: 15px;
-            }
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Projeto Extensionista - Matheus Vinicius</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #f9f9f9;
+        color: #333;
+        scroll-behavior: smooth;
+    }
+    header {
+        background-color: #004080;
+        color: white;
+        padding: 15px 20px;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    header h1 {
+        font-size: 20px;
+        margin: 0;
+    }
+    nav {
+        display: flex;
+        gap: 15px;
+    }
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 8px 12px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+    nav a:hover {
+        background-color: #0066cc;
+    }
+    main {
+        max-width: 900px;
+        margin: 100px auto 40px;
+        background: white;
+        padding: 20px 25px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        border-radius: 8px;
+    }
+    h2 {
+        color: #004080;
+        margin-top: 0;
+    }
+    section {
+        margin-bottom: 40px;
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 6px;
+        margin-top: 10px;
+    }
+    .image-credit {
+        font-size: 0.8em;
+        color: #666;
+        margin-bottom: 20px;
+    }
+
+    /* Cards participantes */
+    .participants {
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(140px,1fr));
+        gap: 15px;
+    }
+    .card {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        text-align: center;
+        padding: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: default;
+    }
+    .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    .card img {
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        margin-bottom: 8px;
+    }
+    .card p {
+        margin: 0;
+        font-weight: bold;
+        font-size: 1em;
+        color: #004080;
+    }
+    .card small {
+        display: block;
+        color: #666;
+        font-weight: normal;
+        margin-top: 2px;
+    }
+
+    /* Nota do projeto */
+    .rating {
+        font-size: 1.5rem;
+        color: #FFD700;
+        margin: 10px 0 20px 0;
+    }
+
+    /* Botão de scroll to top */
+    #toTopBtn {
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        background-color: #004080;
+        color: white;
+        border: none;
+        padding: 12px 16px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 18px;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+        display: none;
+        z-index: 1001;
+    }
+    #toTopBtn:hover {
+        background-color: #0066cc;
+    }
+</style>
 </head>
 <body>
-    <header>
-        <h1>Projeto Extensionista - Matheus Vinicius</h1>
-        <p>Curso: Análise e Desenvolvimento de Sistemas - Cruzeiro do Sul (EAD)</p>
-    </header>
-    <main>
-        <section id="apresentacao">
-            <h2>Apresentação</h2>
-            <p>
-                Esta página apresenta o relatório do Projeto Extensionista desenvolvido por Matheus Vinicius, estudante do curso de Análise e Desenvolvimento de Sistemas da Universidade Cruzeiro do Sul (EAD).
-                O projeto visa promover a interação entre a universidade e a comunidade local, contribuindo para a melhoria social e educativa, conforme os Objetivos de Desenvolvimento Sustentável (ODS).
-            </p>
-            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=60" alt="Comunidade e Educação" />
-            <div class="image-credit">Foto por <a href="https://unsplash.com/@anniespratt" target="_blank">Annie Spratt</a> no Unsplash</div>
-        </section>
 
-        <section id="objetivos">
-            <h2>Objetivos do Projeto</h2>
-            <p>
-                O projeto tem como objetivos principais:
-                <ul>
-                    <li>Garantir acesso à educação inclusiva, equitativa e de qualidade (ODS 4).</li>
-                    <li>Promover ações que incentivem a participação da comunidade em atividades educativas e culturais.</li>
-                    <li>Desenvolver competências acadêmicas e socioemocionais para o estudante e a comunidade.</li>
-                </ul>
-            </p>
-            <img src="https://cdn.pixabay.com/photo/2018/05/01/00/14/sustainable-development-3367509_1280.jpg" alt="ODS 4 - Educação de Qualidade" />
-            <div class="image-credit">Imagem por <a href="https://pixabay.com/users/geralt-9301/" target="_blank">geralt</a> no Pixabay</div>
-        </section>
+<header>
+    <h1>Projeto Extensionista - Matheus Vinicius</h1>
+    <nav>
+        <a href="#apresentacao">Apresentação</a>
+        <a href="#infosProjeto">Projeto</a>
+        <a href="#participantes">Participantes</a>
+        <a href="#avaliacao">Avaliação</a>
+        <a href="#contato">Contato</a>
+    </nav>
+</header>
 
-        <section id="desenvolvimento">
-            <h2>Desenvolvimento do Projeto</h2>
-            <p>
-                Durante o semestre, foram realizadas diversas atividades presenciais e online com a comunidade local, que incluíram:
-                <ul>
-                    <li>Mapeamento das necessidades da comunidade;</li>
-                    <li>Elaboração de oficinas educativas;</li>
-                    <li>Promoção de campanhas sobre a importância da educação inclusiva;</li>
-                    <li>Interação contínua para acompanhamento e avaliação das ações.</li>
-                </ul>
-            </p>
-            <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=60" alt="Oficina comunitária" />
-            <div class="image-credit">Foto por <a href="https://unsplash.com/@kobby_dagan" target="_blank">Kobby Mendez</a> no Unsplash</div>
-        </section>
+<main>
+    <section id="apresentacao">
+        <h2>Apresentação</h2>
+        <p>
+            Este projeto extensionista foi desenvolvido por Matheus Vinicius, estudante do curso de Análise e Desenvolvimento de Sistemas da Universidade Cruzeiro do Sul (EAD).
+            O objetivo principal é promover ações que fortalecem o acesso à educação inclusiva e de qualidade na comunidade local, alinhadas ao Objetivo de Desenvolvimento Sustentável 4.
+        </p>
+        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=60" alt="Comunidade e Educação" />
+        <div class="image-credit">Foto por <a href="https://unsplash.com/@anniespratt" target="_blank" rel="noopener noreferrer">Annie Spratt</a> no Unsplash</div>
+    </section>
 
-        <section id="resultados">
-            <h2>Resultados Alcançados</h2>
-            <p>
-                O projeto proporcionou benefícios importantes, tais como:
-                <ul>
-                    <li>Maior acesso à informação e conscientização da comunidade sobre educação inclusiva;</li>
-                    <li>Desenvolvimento de habilidades sociais e técnicas para os participantes;</li>
-                    <li>Fortalecimento dos laços entre universidade e comunidade;</li>
-                    <li>Experiência enriquecedora para a formação acadêmica e cidadã do estudante.</li>
-                </ul>
-            </p>
-            <img src="https://cdn.pixabay.com/photo/2017/06/20/19/11/group-2425125_1280.jpg" alt="Comunidade reunida" />
-            <div class="image-credit">Imagem por <a href="https://pixabay.com/users/jarmoluk-665945/" target="_blank">jarmoluk</a> no Pixabay</div>
-        </section>
+    <section id="infosProjeto">
+        <h2>Informações do Projeto</h2>
+        <p>Durante o semestre foram realizadas atividades de conscientização, oficinas, campanhas educativas, e acompanhamento da comunidade. As ações focaram na inclusão, igualdade e formação de cidadãos ativos.</p>
+        <p>O público-alvo abrange diversas faixas etárias, demonstrando a abrangência social e educativa do projeto.</p>
+        <img src="https://cdn.pixabay.com/photo/2018/05/01/00/14/sustainable-development-3367509_1280.jpg" alt="ODS 4 - Educação de Qualidade" />
+        <div class="image-credit">Imagem por <a href="https://pixabay.com/users/geralt-9301/" target="_blank" rel="noopener noreferrer">geralt</a> no Pixabay</div>
+    </section>
 
-        <section id="autoavaliacao">
-            <h2>Autoavaliação</h2>
-            <p>
-                A realização deste projeto apresentou desafios, como a necessidade de adaptar as ações às características específicas da comunidade e a limitação de recursos financeiros. No entanto, as aprendizagens foram significativas, tanto na prática extensionista quanto no desenvolvimento pessoal.
-                Recomenda-se maior planejamento financeiro e ampliação das parcerias para fortalecer futuras ações.
-            </p>
-        </section>
+    <section id="participantes">
+        <h2>Participantes</h2>
+        <div class="participants">
+            <!-- Participantes -->
+            <div class="card">
+                <img src="https://randomuser.me/api/portraits/men/12.jpg" alt="Vitor Raphael" />
+                <p>Vitor Raphael</p><small>24 anos</small>
+            </div>
+            <div class="card">
+                <img src="https://randomuser.me/api/portraits/men/15.jpg" alt="Felipe Gabriel" />
+                <p>Felipe Gabriel</p><small>18 anos</small>
+            </div>
+            <div class="card">
+                <img src="https://randomuser.me/api/portraits/women/25.jpg" alt="Thamires Tenorio" />
+                <p>Thamires Tenorio</p><small>24 anos</small>
+            </div>
+            <div class="card">
+                <img src="https://randomuser.me/api/portraits/men/17.jpg" alt="Antony da Cruz" />
+                <p>Antony da Cruz</p><small>20 anos</small>
+            </div>
+            <div class="card">
+                <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Maya" />
+                <p>Maya</p><small>2 anos</small>
+            </div>
+            <div class="card">
+                <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Larissa Rodrigues" />
+                <p>Larissa Rodrigues</p><small>20 anos</small>
+            </div>
+            <div class="card">
+                <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Marina Rodrigues" />
+                <p>Marina Rodrigues</p><small>26 anos</small>
+            </div>
+            <div class="card">
+                <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Maria do Carmo Noronha de Souza" />
+                <p>Maria do Carmo Noronha de Souza</p><small>80 anos</small>
+            </div>
+            <div class="card">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Roberto Rodrigues" />
+                <p>Roberto Rodrigues</p><small>22 anos</small>
+            </div>
+            <div class="card">
+                <img src="https://randomuser.me/api/portraits/men/40.jpg" alt="Lucca Yuji" />
+                <p>Lucca Yuji</p><small>24 anos</small>
+            </div>
+        </div>
+    </section>
 
-        <section id="contato">
-            <h2>Contato</h2>
-            <p>Matheus Vinicius - Estudante de Análise e Desenvolvimento de Sistemas - Cruzeiro do Sul (EAD)</p>
-            <p>Email: <a href="mailto:matheus.vinicius@email.com">matheus.vinicius@email.com</a></p>
-        </section>
-    </main>
+    <section id="avaliacao">
+        <h2>Avaliação do Projeto</h2>
+        <p>O projeto foi avaliado com a nota abaixo, considerando impacto social, participação e organização:</p>
+        <div class="rating" aria-label="Nota do projeto">
+            <!-- Estrelas preenchidas usando JS -->
+            <span id="stars">★★★★★</span>
+        </div>
+        <p><em>Comentários:</em> Excelente iniciativa, com impacto positivo e engajamento significativo da comunidade.</p>
+    </section>
 
-    <footer>
-        <p>© 2025 Matheus Vinicius - Projeto Extensionista</p>
-    </footer>
+    <section id="contato">
+        <h2>Contato</h2>
+        <p>Matheus Vinicius - Estudante de Análise e Desenvolvimento de Sistemas - Cruzeiro do Sul (EAD)</p>
+        <p>Email: <a href="mailto:matheus.vinicius@email.com">matheus.vinicius@email.com</a></p>
+    </section>
+</main>
+
+<button id="toTopBtn" title="Voltar ao topo">↑</button>
+
+<script>
+    // Scroll to top button
+    const toTopBtn = document.getElementById('toTopBtn');
+
+    window.onscroll = function() {
+        if(document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            toTopBtn.style.display = 'block';
+        } else {
+            toTopBtn.style.display = 'none';
+        }
+    };
+
+    toTopBtn.addEventListener('click', () => {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    });
+
+    // Exemplo simples para alterar as estrelas de avaliação (5 estrelas cheias)
+    // Se quiser deixar dinâmico, pode alterar aqui.
+    const starsElem = document.getElementById('stars');
+    // starsElem.textContent = '★★★★☆'; // Exemplo para 4 estrelas e meia
+</script>
+
 </body>
 </html>
