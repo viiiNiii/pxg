@@ -144,6 +144,24 @@
       align-items: center;
     }
   }
+
+  /* Spoiler button */
+  .spoiler-btn {
+    display: inline-block;
+    background: #2563EB;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    border: none;
+    margin-bottom: 1rem;
+    transition: background-color 0.3s ease;
+  }
+
+  .spoiler-btn:hover {
+    background: #1D4ED8;
+  }
 </style>
 </head>
 <body>
@@ -162,7 +180,7 @@
   </section>
 
   <section id="pessoas">
-    <h2>Pessoas Ajudadas e Participantes</h2>
+    <h2>Algumas Pessoas Ajudadas</h2>
     <ul>
       <li>Vitor Raphael, 24 anos</li>
       <li>Felipe Gabriel, 18 anos</li>
@@ -177,25 +195,28 @@
     </ul>
   </section>
 
-  <section id="videos">
-    <h2>Vídeos Educativos</h2>
-    <div class="video-list">
-      <article class="video-item">
-        <iframe src="https://www.youtube.com/embed/E5kxsmYwBLY" title="Inclusão Escolar e Educação Inclusiva" allowfullscreen></iframe>
-        <h3>Inclusão Escolar e Educação Inclusiva</h3>
-        <p>Vídeo explicativo sobre os conceitos e práticas de inclusão escolar no Brasil.</p>
-      </article>
-      <article class="video-item">
-        <iframe src="https://www.youtube.com/embed/l97-3gINw0s" title="Tecnologias Assistivas" allowfullscreen></iframe>
-        <h3>Tecnologias Assistivas</h3>
-        <p>Conheça os principais recursos tecnológicos que auxiliam a inclusão de pessoas com deficiência.</p>
-      </article>
-      <article class="video-item">
-        <iframe src="https://www.youtube.com/embed/VL9Y5LUFftI" title="Acessibilidade na Educação" allowfullscreen></iframe>
-        <h3>Acessibilidade na Educação</h3>
-        <p>Importância da acessibilidade no ambiente escolar para garantir a igualdade de oportunidades.</p>
-      </article>
-    </div>
+  <section id="videos-section">
+    <button class="spoiler-btn" onclick="toggleVideos()">Mostrar/Esconder Vídeos Educativos</button>
+    <section id="videos" style="display:none;">
+      <h2>Vídeos Educativos</h2>
+      <div class="video-list">
+        <article class="video-item">
+          <iframe src="https://www.youtube.com/embed/E5kxsmYwBLY" title="Inclusão Escolar e Educação Inclusiva" allowfullscreen></iframe>
+          <h3>Inclusão Escolar e Educação Inclusiva</h3>
+          <p>Vídeo explicativo sobre os conceitos e práticas de inclusão escolar no Brasil.</p>
+        </article>
+        <article class="video-item">
+          <iframe src="https://www.youtube.com/embed/l97-3gINw0s" title="Tecnologias Assistivas" allowfullscreen></iframe>
+          <h3>Tecnologias Assistivas</h3>
+          <p>Conheça os principais recursos tecnológicos que auxiliam a inclusão de pessoas com deficiência.</p>
+        </article>
+        <article class="video-item">
+          <iframe src="https://www.youtube.com/embed/VL9Y5LUFftI" title="Acessibilidade na Educação" allowfullscreen></iframe>
+          <h3>Acessibilidade na Educação</h3>
+          <p>Importância da acessibilidade no ambiente escolar para garantir a igualdade de oportunidades.</p>
+        </article>
+      </div>
+    </section>
   </section>
 
   <a href="https://docs.google.com/document/d/1kZ94VZMfAM3iAgLBjwcY3FuzDc4_pdfjFstB-EcE0n0/edit?usp=sharing" target="_blank" class="doc-link">
@@ -207,6 +228,17 @@
   <p>Contato: <a href="mailto:viiniioliiveiira@gmail.com">viiniioliiveiira@gmail.com</a></p>
   <p>© 2025 Projeto de Extensão - Educação Inclusiva e Acessibilidade</p>
 </footer>
+
+<script>
+  function toggleVideos() {
+    const videosSection = document.getElementById('videos');
+    if (videosSection.style.display === 'none') {
+      videosSection.style.display = 'block';
+    } else {
+      videosSection.style.display = 'none';
+    }
+  }
+</script>
 
 </body>
 </html>
