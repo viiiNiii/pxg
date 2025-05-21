@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Projeto Extensão - Educação Inclusiva e Acessibilidade</title>
 <style>
-  /* Reset básico */
   * {
     margin: 0;
     padding: 0;
@@ -20,7 +19,7 @@
   }
 
   header {
-    background: #1E3A8A; /* azul escuro */
+    background: #1E3A8A;
     color: white;
     padding: 2rem 1rem;
     text-align: center;
@@ -43,8 +42,7 @@
     padding: 0 1rem;
   }
 
-  /* Seção projetos */
-  section#projeto {
+  section {
     background: white;
     padding: 2rem;
     border-radius: 8px;
@@ -52,37 +50,36 @@
     margin-bottom: 3rem;
   }
 
-  section#projeto h2 {
+  section h2 {
     color: #1E3A8A;
     margin-bottom: 1rem;
   }
 
-  section#projeto p {
+  section p {
     font-size: 1.05rem;
   }
 
+  /* Pessoas ajudadas */
+  #pessoas ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  #pessoas ul li {
+    padding: 6px 0;
+    border-bottom: 1px solid #dbe4f7;
+    font-size: 1.1rem;
+    color: #1e3a8a;
+  }
+
   /* Área vídeos */
-  section#videos {
-    background: white;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 3px 10px rgba(30,58,138,0.1);
-  }
-
-  section#videos h2 {
-    color: #1E3A8A;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-
-  .video-list {
+  #videos .video-list {
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
     justify-content: center;
   }
 
-  .video-item {
+  #videos .video-item {
     flex: 1 1 320px;
     background: #e7f0ff;
     padding: 1rem;
@@ -93,27 +90,26 @@
     align-items: center;
   }
 
-  .video-item iframe {
+  #videos .video-item iframe {
     border-radius: 6px;
     width: 100%;
     height: 180px;
     margin-bottom: 1rem;
   }
 
-  .video-item h3 {
+  #videos .video-item h3 {
     font-size: 1.2rem;
     margin-bottom: 0.4rem;
     color: #1E3A8A;
     text-align: center;
   }
 
-  .video-item p {
+  #videos .video-item p {
     font-size: 0.95rem;
     color: #444;
     text-align: center;
   }
 
-  /* Link para documentação */
   .doc-link {
     display: block;
     max-width: 400px;
@@ -142,9 +138,8 @@
     background: #e7f0ff;
   }
 
-  /* Responsividade */
   @media (max-width: 640px) {
-    .video-list {
+    #videos .video-list {
       flex-direction: column;
       align-items: center;
     }
@@ -166,23 +161,39 @@
     </p>
   </section>
 
+  <section id="pessoas">
+    <h2>Pessoas Ajudadas e Participantes</h2>
+    <ul>
+      <li>Vitor Raphael, 24 anos</li>
+      <li>Felipe Gabriel, 18 anos</li>
+      <li>Thamires Tenorio, 24 anos</li>
+      <li>Antony da Cruz, 20 anos</li>
+      <li>Maya, 2 anos</li>
+      <li>Larissa Rodrigues, 20 anos</li>
+      <li>Marina Rodrigues, 26 anos</li>
+      <li>Maria do Carmo Noronha de Souza, 80 anos</li>
+      <li>Roberto Rodrigues, 22 anos</li>
+      <li>Lucca Yuji, 24 anos</li>
+    </ul>
+  </section>
+
   <section id="videos">
     <h2>Vídeos Educativos</h2>
     <div class="video-list">
       <article class="video-item">
-        <iframe src="https://www.youtube.com/embed/36sNWPuO5I4" title="Educação Inclusiva para Pessoas com Deficiência" allowfullscreen></iframe>
-        <h3>Educação Inclusiva para Pessoas com Deficiência</h3>
-        <p>Entenda os conceitos fundamentais e a importância da educação inclusiva para a sociedade.</p>
+        <iframe src="https://www.youtube.com/embed/E5kxsmYwBLY" title="Inclusão Escolar e Educação Inclusiva" allowfullscreen></iframe>
+        <h3>Inclusão Escolar e Educação Inclusiva</h3>
+        <p>Vídeo explicativo sobre os conceitos e práticas de inclusão escolar no Brasil.</p>
       </article>
       <article class="video-item">
-        <iframe src="https://www.youtube.com/embed/6H0djXIzYmQ" title="Tecnologias Assistivas e Acessibilidade" allowfullscreen></iframe>
-        <h3>Tecnologias Assistivas e Acessibilidade</h3>
-        <p>Conheça as principais tecnologias que ajudam pessoas com deficiência no dia a dia.</p>
+        <iframe src="https://www.youtube.com/embed/l97-3gINw0s" title="Tecnologias Assistivas" allowfullscreen></iframe>
+        <h3>Tecnologias Assistivas</h3>
+        <p>Conheça os principais recursos tecnológicos que auxiliam a inclusão de pessoas com deficiência.</p>
       </article>
       <article class="video-item">
-        <iframe src="https://www.youtube.com/embed/1W-SC1vPvqQ" title="Inclusão Social e Educação" allowfullscreen></iframe>
-        <h3>Inclusão Social e Educação</h3>
-        <p>Como a educação pode ser ferramenta para a inclusão social e o respeito à diversidade.</p>
+        <iframe src="https://www.youtube.com/embed/VL9Y5LUFftI" title="Acessibilidade na Educação" allowfullscreen></iframe>
+        <h3>Acessibilidade na Educação</h3>
+        <p>Importância da acessibilidade no ambiente escolar para garantir a igualdade de oportunidades.</p>
       </article>
     </div>
   </section>
