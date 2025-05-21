@@ -5,205 +5,293 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Projeto Extensionista - Matheus Vinicius</title>
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        background: #f9f9f9;
-        color: #333;
-        scroll-behavior: smooth;
-    }
-    header {
-        background-color: #004080;
-        color: white;
-        padding: 15px 20px;
-        position: fixed;
-        width: 100%;
-        top: 0;
-        z-index: 1000;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+  body {
+    font-family: 'Inter', Arial, sans-serif;
+    margin: 0;
+    background: #f4f7fa;
+    color: #2c3e50;
+    scroll-behavior: smooth;
+    line-height: 1.6;
+  }
+
+  header {
+    background-color: #34495e;
+    color: #ecf0f1;
+    padding: 15px 30px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  header h1 {
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin: 0;
+  }
+
+  nav {
+    display: flex;
+    gap: 18px;
+  }
+
+  nav a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    font-size: 0.95rem;
+  }
+
+  nav a:hover {
+    background-color: #2c3e50;
+  }
+
+  main {
+    max-width: 960px;
+    margin: 110px auto 50px;
+    background: white;
+    padding: 30px 35px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  }
+
+  h2 {
+    color: #34495e;
+    border-bottom: 3px solid #2980b9;
+    padding-bottom: 6px;
+    margin-top: 0;
+  }
+
+  section {
+    margin-bottom: 50px;
+  }
+
+  p {
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+
+  img {
+    max-width: 100%;
+    border-radius: 12px;
+    margin-top: 15px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+  }
+
+  .image-credit {
+    font-size: 0.75rem;
+    color: #7f8c8d;
+    margin-top: 6px;
+    margin-bottom: 20px;
+  }
+
+  /* Participantes em card */
+  .participants-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 15px;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .participants-list li {
+    background: #ecf0f1;
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-weight: 600;
+    color: #2c3e50;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    cursor: default;
+  }
+
+  .participants-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+  }
+
+  /* Nota do projeto */
+  .rating {
+    font-size: 1.8rem;
+    color: #f1c40f;
+    margin: 15px 0 25px 0;
+    user-select: none;
+  }
+
+  /* Botão para voltar ao topo */
+  #toTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    padding: 14px 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 22px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    display: none;
+    z-index: 1001;
+    transition: background-color 0.3s ease;
+  }
+
+  #toTopBtn:hover {
+    background-color: #3498db;
+  }
+
+  /* Área de vídeos */
+  #videosContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+    gap: 20px;
+  }
+
+  .video-card {
+    background: #ecf0f1;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+
+  .video-card iframe {
+    width: 100%;
+    height: 180px;
+    border: none;
+    display: block;
+  }
+
+  .video-card:hover {
+    transform: scale(1.03);
+  }
+
+  /* Links com hover */
+  a {
+    color: #2980b9;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* Responsividade */
+  @media (max-width: 480px) {
     header h1 {
-        font-size: 20px;
-        margin: 0;
+      font-size: 1.1rem;
     }
     nav {
-        display: flex;
-        gap: 15px;
+      gap: 10px;
     }
     nav a {
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
-        padding: 8px 12px;
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
+      font-size: 0.85rem;
+      padding: 6px 10px;
     }
-    nav a:hover {
-        background-color: #0066cc;
-    }
-    main {
-        max-width: 900px;
-        margin: 100px auto 40px;
-        background: white;
-        padding: 20px 25px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        border-radius: 8px;
-    }
-    h2 {
-        color: #004080;
-        margin-top: 0;
-    }
-    section {
-        margin-bottom: 40px;
-    }
-    img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 6px;
-        margin-top: 10px;
-    }
-    .image-credit {
-        font-size: 0.8em;
-        color: #666;
-        margin-bottom: 20px;
-    }
-
-    /* Lista de participantes sem imagens */
-    .participants-list {
-        list-style: none;
-        padding-left: 0;
-        font-size: 1.1em;
-        color: #004080;
-    }
-    .participants-list li {
-        padding: 6px 0;
-        border-bottom: 1px solid #ddd;
-    }
-
-    /* Nota do projeto */
-    .rating {
-        font-size: 1.5rem;
-        color: #FFD700;
-        margin: 10px 0 20px 0;
-    }
-
-    /* Botão de scroll to top */
-    #toTopBtn {
-        position: fixed;
-        bottom: 25px;
-        right: 25px;
-        background-color: #004080;
-        color: white;
-        border: none;
-        padding: 12px 16px;
-        border-radius: 50%;
-        cursor: pointer;
-        font-size: 18px;
-        box-shadow: 0 3px 6px rgba(0,0,0,0.3);
-        display: none;
-        z-index: 1001;
-    }
-    #toTopBtn:hover {
-        background-color: #0066cc;
-    }
+  }
 </style>
 </head>
 <body>
 
 <header>
-    <h1>Projeto Extensionista - Matheus Vinicius</h1>
-    <nav>
-        <a href="#apresentacao">Apresentação</a>
-        <a href="#infosProjeto">Projeto</a>
-        <a href="#participantes">Participantes</a>
-        <a href="#contextoPessoal">Contexto Pessoal</a>
-        <a href="#avaliacao">Avaliação</a>
-        <a href="#contato">Contato</a>
-    </nav>
+  <h1>Projeto Extensionista - Matheus Vinicius</h1>
+  <nav>
+    <a href="#apresentacao">Apresentação</a>
+    <a href="#infosProjeto">Projeto</a>
+    <a href="#participantes">Participantes</a>
+    <a href="#contextoPessoal">Contexto Pessoal</a>
+    <a href="#videos">Vídeos</a>
+    <a href="#avaliacao">Avaliação</a>
+    <a href="#contato">Contato</a>
+  </nav>
 </header>
 
 <main>
-    <section id="apresentacao">
-        <h2>Apresentação</h2>
-        <p>
-            Este projeto extensionista foi desenvolvido por Matheus Vinicius, estudante do curso de Análise e Desenvolvimento de Sistemas da Universidade Cruzeiro do Sul (EAD).
-            O objetivo principal é promover ações que fortalecem o acesso à educação inclusiva e de qualidade na comunidade local, alinhadas ao Objetivo de Desenvolvimento Sustentável 4.
-        </p>
-        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=60" alt="Comunidade e Educação" />
-        <div class="image-credit">Foto por <a href="https://unsplash.com/@anniespratt" target="_blank" rel="noopener noreferrer">Annie Spratt</a> no Unsplash</div>
-    </section>
+  <section id="apresentacao">
+    <h2>Apresentação</h2>
+    <p>
+      Este projeto extensionista foi desenvolvido por Matheus Vinicius, estudante do curso de Análise e Desenvolvimento de Sistemas da Universidade Cruzeiro do Sul (EAD).
+      O objetivo principal é promover ações que fortalecem o acesso à educação inclusiva e de qualidade na comunidade local, alinhadas ao Objetivo de Desenvolvimento Sustentável 4.
+    </p>
+    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=60" alt="Comunidade e Educação" />
+    <div class="image-credit">Foto por <a href="https://unsplash.com/@anniespratt" target="_blank" rel="noopener noreferrer">Annie Spratt</a> no Unsplash</div>
+  </section>
 
-    <section id="infosProjeto">
-        <h2>Informações do Projeto</h2>
-        <p>Durante o semestre foram realizadas atividades de conscientização, oficinas, campanhas educativas, e acompanhamento da comunidade. As ações focaram na inclusão, igualdade e formação de cidadãos ativos.</p>
-        <p>O público-alvo abrange diversas faixas etárias, demonstrando a abrangência social e educativa do projeto.</p>
-        <img src="https://cdn.pixabay.com/photo/2018/05/01/00/14/sustainable-development-3367509_1280.jpg" alt="ODS 4 - Educação de Qualidade" />
-        <div class="image-credit">Imagem por <a href="https://pixabay.com/users/geralt-9301/" target="_blank" rel="noopener noreferrer">geralt</a> no Pixabay</div>
-    </section>
+  <section id="infosProjeto">
+    <h2>Informações do Projeto</h2>
+    <p>Durante o semestre foram realizadas atividades de conscientização, oficinas, campanhas educativas, e acompanhamento da comunidade. As ações focaram na inclusão, igualdade e formação de cidadãos ativos.</p>
+    <p>O público-alvo abrange diversas faixas etárias, demonstrando a abrangência social e educativa do projeto.</p>
+    <img src="https://cdn.pixabay.com/photo/2018/05/01/00/14/sustainable-development-3367509_1280.jpg" alt="ODS 4 - Educação de Qualidade" />
+    <div class="image-credit">Imagem por <a href="https://pixabay.com/users/geralt-9301/" target="_blank" rel="noopener noreferrer">geralt</a> no Pixabay</div>
+  </section>
 
-    <section id="participantes">
-        <h2>Participantes</h2>
-        <ul class="participants-list">
-            <li>Vitor Raphael - 24 anos</li>
-            <li>Felipe Gabriel - 18 anos</li>
-            <li>Thamires Tenorio - 24 anos</li>
-            <li>Antony da Cruz - 20 anos</li>
-            <li>Maya - 2 anos</li>
-            <li>Larissa Rodrigues - 20 anos</li>
-            <li>Marina Rodrigues - 26 anos</li>
-            <li>Maria do Carmo Noronha de Souza - 80 anos</li>
-            <li>Roberto Rodrigues - 22 anos</li>
-            <li>Lucca Yuji - 24 anos</li>
-        </ul>
-    </section>
+  <section id="participantes">
+    <h2>Participantes</h2>
+    <ul class="participants-list">
+      <li>Vitor Raphael - 24 anos</li>
+      <li>Felipe Gabriel - 18 anos</li>
+      <li>Thamires Tenorio - 24 anos</li>
+      <li>Antony da Cruz - 20 anos</li>
+      <li>Maya - 2 anos</li>
+      <li>Larissa Rodrigues - 20 anos</li>
+      <li>Mariana Rodrigues - 25 anos</li>
+      <li>Maria do Carmo Noronha de Souza - 80 anos</li>
+      <li>Roberto Rodrigues - 22 anos</li>
+      <li>Lucca Yuji - 24 anos</li>
+    </ul>
+  </section>
 
-    <section id="contextoPessoal">
-        <h2>Contexto Pessoal - Matheus Vinicius</h2>
-        <p>
-            Matheus Vinicius é considerado uma pessoa com deficiência física e visual, nascendo com pé torto e apresentando ceratocone, condição que exigiu o uso de lentes de grau 14. Ao longo da vida, enfrentou diversas dificuldades para enxergar, mas após uma operação e uso contínuo de lentes, conseguiu melhorar significativamente sua visão.
-        </p>
-        <p>
-            Com dedicação à educação e ao domínio da tecnologia, especialmente computadores, Matheus superou desafios pessoais, tornando-se uma pessoa ativa e participativa na sociedade. Essa experiência fortalece seu compromisso com a inclusão social e a promoção de acessibilidade em seus projetos.
-        </p>
-    </section>
 
-    <section id="avaliacao">
-        <h2>Avaliação do Projeto</h2>
-        <p>O projeto foi avaliado com a nota abaixo, considerando impacto social, participação e organização:</p>
-        <div class="rating" aria-label="Nota do projeto">
-            <span id="stars">★★★★★</span>
-        </div>
-        <p><em>Comentários:</em> Excelente iniciativa, com impacto positivo e engajamento significativo da comunidade.</p>
-    </section>
+<section id="infosProjeto">
+  <h2>Informações do Projeto</h2>
+  <p>Durante o semestre foram realizadas atividades de conscientização, oficinas, campanhas educativas, e acompanhamento da comunidade. As ações focaram na inclusão, igualdade e formação de cidadãos ativos.</p>
+  <p>O público-alvo abrange diversas faixas etárias, demonstrando a abrangência social e educativa do projeto.</p>
+  <p>
+    <strong>Documentação completa do projeto: </strong>
+    <a href="https://docs.google.com/document/d/1kZ94VZMfAM3iAgLBjwcY3FuzDc4_pdfjFstB-EcE0n0/edit?usp=sharing" target="_blank" rel="noopener noreferrer" style="color:#2980b9; font-weight:600;">
+      Acesse aqui
+    </a>
+  </p>
+  <img src="https://cdn.pixabay.com/photo/2018/05/01/00/14/sustainable-development-3367509_1280.jpg" alt="ODS 4 - Educação de Qualidade" />
+  <div class="image-credit">Imagem por <a href="https://pixabay.com/users/geralt-9301/" target="_blank" rel="noopener noreferrer">geralt</a> no Pixabay</div>
+</section>
 
-    <section id="contato">
-        <h2>Contato</h2>
-        <p>Matheus Vinicius - Estudante de Análise e Desenvolvimento de Sistemas - Cruzeiro do Sul (EAD)</p>
-        <p>Email: <a href="mailto:matheus.vinicius@email.com">matheus.vinicius@email.com</a></p>
-    </section>
-</main>
 
-<button id="toTopBtn" title="Voltar ao topo">↑</button>
+  <section id="contextoPessoal">
+    <h2>Contexto Pessoal - Matheus Vinicius</h2>
+    <p>
+      Matheus Vinicius é considerado uma pessoa com deficiência física e visual, nascendo com pé torto e apresentando ceratocone, condição que exigiu o uso de lentes de grau 14. Ao longo da vida, enfrentou diversas dificuldades para enxergar, mas após uma operação e uso contínuo de lentes, conseguiu melhorar significativamente sua visão.
+    </p>
+    <p>
+      Com dedicação à educação e ao domínio da tecnologia, especialmente computadores, Matheus superou desafios pessoais, tornando-se uma pessoa ativa e participativa na sociedade. Essa experiência fortalece seu compromisso com a inclusão social e a promoção de acessibilidade em seus projetos.
+    </p>
+  </section>
 
-<script>
-    // Scroll to top button
-    const toTopBtn = document.getElementById('toTopBtn');
+  <section id="videos">
+    <h2>Área de Vídeos</h2>
+    <p>Em breve, vídeos relacionados às atividades do projeto serão disponibilizados aqui.</p>
+    <!-- Exemplos de vídeos incorporados - substitua os links pelo seus -->
+    <div id="videosContainer">
+      <!-- Video Card Exemplo -->
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" allowfullscreen title="Vídeo Exemplo 1"></iframe>
+      </div>
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/ysz5S6PUM-U" allowfullscreen title="Vídeo Exemplo 2"></iframe>
+      </div>
+    </div>
+  </section>
 
-    window.onscroll = function() {
-        if(document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-            toTopBtn.style.display = 'block';
-        } else {
-            toTopBtn.style.display = 'none';
-        }
-    };
-
-    toTopBtn.addEventListener('click', () => {
-        window.scrollTo({top: 0, behavior: 'smooth'});
-    });
-</script>
-
-</body>
-</html>
+  <section id="avaliacao">
+    <h2>Avaliação do Projeto</h2>
+    <p>O projeto foi avaliado com a nota abaixo,
