@@ -1,139 +1,123 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projeto - Educação Inclusiva</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projeto de Extensão - Educação Inclusiva</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Montserrat', sans-serif;
-      margin: 0;
-      background-color: #f0f4f8;
+      font-family: 'Roboto', sans-serif;
+      background: #f3f7f9;
       color: #333;
-      line-height: 1.6;
+      margin: 0;
+      padding: 0;
     }
     header {
-      background-color: #0b4d91;
+      background: #114b8a;
       color: white;
-      padding: 2rem 1rem;
+      padding: 1.5em;
       text-align: center;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    nav {
-      text-align: center;
-      margin: 1rem 0;
-    }
-    nav a {
-      margin: 0 1rem;
-      text-decoration: none;
-      color: #0b4d91;
-      font-weight: 600;
+    main {
+      max-width: 900px;
+      margin: 2em auto;
+      padding: 1em;
+      background: white;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      border-radius: 10px;
     }
     section {
-      max-width: 960px;
-      margin: 2rem auto;
-      padding: 1rem;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      margin-bottom: 2em;
     }
     h2 {
-      color: #0b4d91;
+      color: #114b8a;
     }
-    .people, .tutorials {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-    }
-    .card {
-      background: #e6f0fa;
-      border-radius: 6px;
-      padding: 1rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    .spoiler {
-      margin-top: 1rem;
-    }
-    summary {
-      cursor: pointer;
-      font-weight: bold;
-      color: #0b4d91;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      background: #0b4d91;
+    .button {
+      background-color: #114b8a;
       color: white;
-      margin-top: 2rem;
-    }
-    .link-btn {
-      display: inline-block;
-      background: #0b4d91;
-      color: white;
-      padding: 0.75rem 1.5rem;
-      border-radius: 4px;
+      padding: 0.6em 1.2em;
+      border: none;
+      border-radius: 5px;
       text-decoration: none;
-      margin-top: 1rem;
+      margin-top: 1em;
+      display: inline-block;
+    }
+    .spoiler-content {
+      display: none;
+      margin-top: 1em;
+    }
+    .spoiler-button {
+      background: #0f639d;
+      color: white;
+      padding: 0.4em 1em;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 1em;
+    }
+    .image {
+      width: 100%;
+      border-radius: 8px;
+      margin-top: 1em;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Projeto Educação Inclusiva e Acessibilidade</h1>
-    <p>Construindo caminhos para todos</p>
+    <h1>Projeto de Extensão</h1>
+    <p>Educação Inclusiva e Acessibilidade</p>
+    <p><strong>Parceria feita com a comunidade e Thamires Tenorio</strong></p>
   </header>
 
-  <nav>
-    <a href="#sobre">Sobre</a>
-    <a href="#ajudadas">Algumas Pessoas Ajudadas</a>
-    <a href="#tutoriais">Tutoriais</a>
-    <a href="https://docs.google.com/document/d/1kZ94VZMfAM3iAgLBjwcY3FuzDc4_pdfjFstB-EcE0n0/edit?usp=sharing" target="_blank">Documentação</a>
-  </nav>
+  <main>
+    <section>
+      <h2>Resumo do Projeto</h2>
+      <p>O projeto tem como objetivo promover a inclusão de pessoas com deficiência por meio da educação acessível. A iniciativa oferece materiais, vídeos, tutoriais e apoio direto à comunidade.</p>
+      <a class="button" href="https://docs.google.com/document/d/1kZ94VZMfAM3iAgLBjwcY3FuzDc4_pdfjFstB-EcE0n0/edit?usp=sharing" target="_blank">Ver Documentação</a>
+      <a class="button" href="https://viiiniii.github.io/pxg/" target="_blank">Acessar Site</a>
+    </section>
 
-  <section id="sobre">
-    <h2>Sobre o Projeto</h2>
-    <p>
-      Este projeto foi desenvolvido com o objetivo de promover a educação inclusiva e o acesso à tecnologia para pessoas com deficiência. Acreditamos que a inclusão começa com informação, respeito e acessibilidade. O projeto envolve ações diretas com a comunidade local, capacitação digital e apoio a indivíduos com diferentes necessidades.
-    </p>
-  </section>
+    <section>
+      <h2>Algumas Pessoas Ajudadas</h2>
+      <ul>
+        <li>Vitor Raphael (24 anos)</li>
+        <li>Felipe Gabriel (18 anos)</li>
+        <li>Thamires Tenorio (24 anos)</li>
+        <li>Antony da Cruz (20 anos)</li>
+        <li>Maya (2 anos)</li>
+        <li>Larissa Rodrigues (20 anos)</li>
+        <li>Marina Rodrigues (26 anos)</li>
+        <li>Maria do Carmo Noronha de Souza (80 anos)</li>
+        <li>Roberto Rodrigues (22 anos)</li>
+        <li>Lucca Yuji (24 anos)</li>
+      </ul>
+    </section>
 
-  <section id="ajudadas">
-    <h2>Algumas Pessoas Ajudadas</h2>
-    <div class="people">
-      <div class="card">Vitor Raphael, 24 anos</div>
-      <div class="card">Felipe Gabriel, 18 anos</div>
-      <div class="card">Thamires Tenorio, 24 anos</div>
-      <div class="card">Antony da Cruz, 20 anos</div>
-      <div class="card">Maya, 2 anos</div>
-      <div class="card">Larissa Rodrigues, 20 anos</div>
-      <div class="card">Marina Rodrigues, 26 anos</div>
-      <div class="card">Maria do Carmo Noronha de Souza, 80 anos</div>
-      <div class="card">Roberto Rodrigues, 22 anos</div>
-      <div class="card">Lucca Yuji, 24 anos</div>
-    </div>
-  </section>
-
-  <section id="tutoriais">
-    <h2>Tutoriais de Inclusão</h2>
-    <div class="spoiler">
-      <details>
-        <summary>Assistir vídeos de inclusão digital</summary>
+    <section>
+      <h2>Materiais de Apoio e Vídeos</h2>
+      <button class="spoiler-button" onclick="toggleSpoiler()">Mostrar/Ocultar Vídeos</button>
+      <div class="spoiler-content" id="videoSpoiler">
         <ul>
-          <li><a href="https://www.youtube.com/watch?v=MFsBUFBYp9k" target="_blank">Como usar leitores de tela</a></li>
-          <li><a href="https://www.youtube.com/watch?v=IXG0LkD8bSg" target="_blank">Acessibilidade no Windows</a></li>
+          <li><a href="https://www.youtube.com/watch?v=9I5YzM6FQxY" target="_blank">Tutorial: Acessibilidade no Windows</a></li>
+          <li><a href="https://www.youtube.com/watch?v=xxa2LrWbfVg" target="_blank">Como usar leitores de tela (NVDA)</a></li>
         </ul>
-      </details>
-    </div>
-  </section>
+      </div>
+    </section>
 
-  <footer>
-    <p>Contato: <a href="mailto:viiniioliiveiira@gmail.com" style="color: #fff; text-decoration: underline;">viiniioliiveiira@gmail.com</a></p>
-    <p><a href="https://viiiniii.github.io/pxg/" target="_blank" class="link-btn">Acessar o Site Oficial</a></p>
-    <p>&copy; 2025 - Projeto de Extensão Universitária</p>
-  </footer>
+    <section>
+      <h2>Panfleto Informativo</h2>
+      <a href="https://media.discordapp.net/attachments/686266831165718531/1375301688461754460/3661a6d2-be11-4210-8c59-bda3051edfa1.png?ex=68313102&is=682fdf82&hm=8da89bf100f21cff3d7c302c99ad5c655d7f9374b024b66b6a34e4cd047aaf8f&=&format=webp&quality=lossless&width=645&height=968" target="_blank">
+        <img class="image" src="https://media.discordapp.net/attachments/686266831165718531/1375301688461754460/3661a6d2-be11-4210-8c59-bda3051edfa1.png?ex=68313102&is=682fdf82&hm=8da89bf100f21cff3d7c302c99ad5c655d7f9374b024b66b6a34e4cd047aaf8f&=&format=webp&quality=lossless&width=645&height=968" alt="Panfleto do Projeto"/>
+      </a>
+    </section>
+  </main>
+
+  <script>
+    function toggleSpoiler() {
+      var content = document.getElementById("videoSpoiler");
+      content.style.display = content.style.display === "block" ? "none" : "block";
+    }
+  </script>
 </body>
 </html>
