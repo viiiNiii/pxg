@@ -1,212 +1,135 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Projeto Extensão - Educação Inclusiva e Acessibilidade</title>
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f0f4f8;
-    color: #333;
-    line-height: 1.6;
-  }
-
-  header {
-    background: #1E3A8A;
-    color: white;
-    padding: 2rem 1rem;
-    text-align: center;
-    box-shadow: 0 2px 6px rgba(30,58,138,0.4);
-  }
-
-  header h1 {
-    font-size: 2.4rem;
-    margin-bottom: 0.5rem;
-  }
-  header p {
-    font-size: 1.1rem;
-    font-weight: 300;
-    opacity: 0.85;
-  }
-
-  main {
-    max-width: 960px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-  }
-
-  section {
-    background: white;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 3px 10px rgba(30,58,138,0.1);
-    margin-bottom: 3rem;
-  }
-
-  section h2 {
-    color: #1E3A8A;
-    margin-bottom: 1rem;
-  }
-
-  section p {
-    font-size: 1.05rem;
-  }
-
-  /* Pessoas ajudadas */
-  #pessoas ul {
-    list-style-type: none;
-    padding-left: 0;
-  }
-  #pessoas ul li {
-    padding: 6px 0;
-    border-bottom: 1px solid #dbe4f7;
-    font-size: 1.1rem;
-    color: #1e3a8a;
-  }
-
-  /* Área vídeos */
-  #videos .video-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    justify-content: center;
-  }
-
-  #videos .video-item {
-    flex: 1 1 320px;
-    background: #e7f0ff;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 1px 4px rgba(30,58,138,0.15);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #videos .video-item iframe {
-    border-radius: 6px;
-    width: 100%;
-    height: 180px;
-    margin-bottom: 1rem;
-  }
-
-  #videos .video-item h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.4rem;
-    color: #1E3A8A;
-    text-align: center;
-  }
-
-  #videos .video-item p {
-    font-size: 0.95rem;
-    color: #444;
-    text-align: center;
-  }
-
-  .doc-link {
-    display: block;
-    max-width: 400px;
-    margin: 2rem auto;
-    padding: 1rem 1.5rem;
-    background: #2563EB;
-    color: white;
-    text-align: center;
-    font-weight: 600;
-    border-radius: 6px;
-    text-decoration: none;
-    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.5);
-    transition: background-color 0.3s ease;
-  }
-
-  .doc-link:hover {
-    background: #1D4ED8;
-  }
-
-  footer {
-    margin-top: 3rem;
-    padding: 1.2rem;
-    text-align: center;
-    font-size: 0.9rem;
-    color: #666;
-    background: #e7f0ff;
-  }
-
-  @media (max-width: 640px) {
-    #videos .video-list {
-      flex-direction: column;
-      align-items: center;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projeto de Extensão - Educação Inclusiva</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f3f7f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
     }
-  }
-</style>
+    header {
+      background: #114b8a;
+      color: white;
+      padding: 1.5em;
+      text-align: center;
+    }
+    main {
+      max-width: 900px;
+      margin: 2em auto;
+      padding: 1em;
+      background: white;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+    section {
+      margin-bottom: 2em;
+    }
+    h2 {
+      color: #114b8a;
+    }
+    .button {
+      background-color: #114b8a;
+      color: white;
+      padding: 0.6em 1.2em;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 1em;
+      display: inline-block;
+    }
+    .spoiler-content {
+      display: none;
+      margin-top: 1em;
+    }
+    .spoiler-button {
+      background: #0f639d;
+      color: white;
+      padding: 0.4em 1em;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 1em;
+    }
+    .image {
+      width: 100%;
+      border-radius: 8px;
+      margin-top: 1em;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>Projeto de Extensão</h1>
+    <p>Educação Inclusiva e Acessibilidade</p>
+    <p><strong>Parceria feita com a comunidade e Thamires Tenorio</strong></p>
+  </header>
 
-<header>
-  <h1>Projeto de Extensão</h1>
-  <p>Educação Inclusiva e Acessibilidade - Construindo um Futuro Melhor</p>
-</header>
+  <main>
+    <section>
+      <h2>Resumo do Projeto</h2>
+      <p>O projeto tem como objetivo promover a inclusão de pessoas com deficiência por meio da educação acessível. A iniciativa oferece materiais, vídeos, tutoriais e apoio direto à comunidade.</p>
+      <a class="button" href="https://docs.google.com/document/d/1kZ94VZMfAM3iAgLBjwcY3FuzDc4_pdfjFstB-EcE0n0/edit?tab=t.0" target="_blank">Ver Documentação</a>
+      <a class="button" href="https://media.discordapp.net/attachments/686266831165718531/1375301688461754460/3661a6d2-be11-4210-8c59-bda3051edfa1.png?ex=68313102&is=682fdf82&hm=8da89bf100f21cff3d7c302c99ad5c655d7f9374b024b66b6a34e4cd047aaf8f&=&format=webp&quality=lossless&width=645&height=968" target="_blank">Ver Panfleto</a>
+      <a class="button" href="https://viiiniii.github.io/pxg/" target="_blank">Acessar Site</a>
+    </section>
 
-<main>
-  <section id="projeto">
-    <h2>Sobre o Projeto</h2>
-    <p>
-      Este projeto visa promover a educação inclusiva e a acessibilidade, contribuindo para a integração de pessoas com deficiência no ambiente educacional e social. Através de ações extensionistas, buscamos sensibilizar, capacitar e apoiar a comunidade para garantir direitos e igualdade de oportunidades.
-    </p>
-  </section>
+    <section>
+      <h2>Imagem do Encontro - Rua de Lazer</h2>
+      <img class="image" src="https://media.discordapp.net/attachments/686266831165718531/1375302530388721665/WhatsApp_Image_2025-05-13_at_20.10.41.jpeg?ex=683131cb&is=682fe04b&hm=1aa0fafb71cc76df2acfed50a69adf9798bfda6e9329389bdf15e887cecc0112&=&format=webp&width=1291&height=968" alt="Encontro Rua de Lazer" />
+    </section>
 
-  <section id="pessoas">
-    <h2>Pessoas Ajudadas e Participantes</h2>
-    <ul>
-      <li>Vitor Raphael, 24 anos</li>
-      <li>Felipe Gabriel, 18 anos</li>
-      <li>Thamires Tenorio, 24 anos</li>
-      <li>Antony da Cruz, 20 anos</li>
-      <li>Maya, 2 anos</li>
-      <li>Larissa Rodrigues, 20 anos</li>
-      <li>Marina Rodrigues, 26 anos</li>
-      <li>Maria do Carmo Noronha de Souza, 80 anos</li>
-      <li>Roberto Rodrigues, 22 anos</li>
-      <li>Lucca Yuji, 24 anos</li>
-    </ul>
-  </section>
+    <section>
+      <h2>Algumas Pessoas Ajudadas</h2>
+      <button class="spoiler-button" onclick="toggleSpoiler('pessoas')">Mostrar/Ocultar Pessoas Ajudadas</button>
+      <div class="spoiler-content" id="pessoas">
+        <ul>
+          <li>Vitor Raphael (24 anos) - "Aprendi a usar recursos de acessibilidade no celular."
+          <li>Felipe Gabriel (18 anos) - "O projeto me ajudou a entender como a tecnologia pode ser acessível."
+          <li>Thamires Tenorio (24 anos) - "Foi gratificante ver a comunidade unida."
+          <li>Antony da Cruz (20 anos) - "Melhorei minha comunicação com pessoas com deficiência."
+          <li>Maya (2 anos) - "A família foi acolhida com carinho e orientação."
+          <li>Larissa Rodrigues (20 anos) - "Entendi como contribuir com a inclusão."
+          <li>Marina Rodrigues (26 anos) - "Hoje compartilho o que aprendi com outros."
+          <li>Maria do Carmo (80 anos) - "Me senti incluída pela primeira vez."
+          <li>Roberto Rodrigues (22 anos) - "Ganhei perspectiva sobre empatia."
+          <li>Lucca Yuji (24 anos) - "Pude ensinar o que aprendi com acessibilidade digital."
+        </ul>
+      </div>
+    </section>
 
-  <section id="videos">
-    <h2>Vídeos Educativos</h2>
-    <div class="video-list">
-      <article class="video-item">
-        <iframe src="https://www.youtube.com/embed/E5kxsmYwBLY" title="Inclusão Escolar e Educação Inclusiva" allowfullscreen></iframe>
-        <h3>Inclusão Escolar e Educação Inclusiva</h3>
-        <p>Vídeo explicativo sobre os conceitos e práticas de inclusão escolar no Brasil.</p>
-      </article>
-      <article class="video-item">
-        <iframe src="https://www.youtube.com/embed/l97-3gINw0s" title="Tecnologias Assistivas" allowfullscreen></iframe>
-        <h3>Tecnologias Assistivas</h3>
-        <p>Conheça os principais recursos tecnológicos que auxiliam a inclusão de pessoas com deficiência.</p>
-      </article>
-      <article class="video-item">
-        <iframe src="https://www.youtube.com/embed/VL9Y5LUFftI" title="Acessibilidade na Educação" allowfullscreen></iframe>
-        <h3>Acessibilidade na Educação</h3>
-        <p>Importância da acessibilidade no ambiente escolar para garantir a igualdade de oportunidades.</p>
-      </article>
-    </div>
-  </section>
+    <section>
+      <h2>Materiais de Apoio e Vídeos</h2>
+      <button class="spoiler-button" onclick="toggleSpoiler('videos')">Mostrar/Ocultar Vídeos</button>
+      <div class="spoiler-content" id="videos">
+        <ul>
+          <li><a href="https://youtu.be/Ybo2Ap5bZ_U" target="_blank">Inclusão Digital com Acessibilidade</a></li>
+          <li><a href="https://www.youtube.com/watch?v=5Wj-5i9tydo" target="_blank">Acessibilidade na Prática</a></li>
+          <li><a href="https://www.youtube.com/watch?v=zg6dk6F3Cp8" target="_blank">Ferramentas para Deficientes Visuais</a></li>
+          <li><a href="https://youtu.be/tBCgYydw-20" target="_blank">Depoimento de um Professor da Comunidade</a></li>
+        </ul>
+      </div>
+    </section>
 
-  <a href="https://docs.google.com/document/d/1kZ94VZMfAM3iAgLBjwcY3FuzDc4_pdfjFstB-EcE0n0/edit?usp=sharing" target="_blank" class="doc-link">
-    Acessar Documentação Completa do Projeto
-  </a>
-</main>
+    <section>
+      <h2>Artigos e Leituras</h2>
+      <ul>
+        <li><a href="https://feac.org.br/a-importancia-da-tecnologia-para-a-inclusao-de-jovens-perifericos-no-mundo-do-trabalho/" target="_blank">Tecnologia e inclusão de jovens periféricos</a></li>
+        <li><a href="https://expresso.estadao.com.br/naperifa/a-periferia-sofre-com-a-falta-de-internet-e-isso-precisa-mudar/" target="_blank">Desafios de conectividade nas periferias</a></li>
+      </ul>
+    </section>
+  </main>
 
-<footer>
-  <p>Contato: <a href="mailto:viiniioliiveiira@gmail.com">viiniioliiveiira@gmail.com</a></p>
-  <p>© 2025 Projeto de Extensão - Educação Inclusiva e Acessibilidade</p>
-</footer>
-
+  <script>
+    function toggleSpoiler(id) {
+      var content = document.getElementById(id);
+      content.style.display = content.style.display === "block" ? "none" : "block";
+    }
+  </script>
 </body>
 </html>
