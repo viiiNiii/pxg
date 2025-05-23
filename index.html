@@ -1,244 +1,139 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Projeto Extensão - Educação Inclusiva e Acessibilidade</title>
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f0f4f8;
-    color: #333;
-    line-height: 1.6;
-  }
-
-  header {
-    background: #1E3A8A;
-    color: white;
-    padding: 2rem 1rem;
-    text-align: center;
-    box-shadow: 0 2px 6px rgba(30,58,138,0.4);
-  }
-
-  header h1 {
-    font-size: 2.4rem;
-    margin-bottom: 0.5rem;
-  }
-  header p {
-    font-size: 1.1rem;
-    font-weight: 300;
-    opacity: 0.85;
-  }
-
-  main {
-    max-width: 960px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-  }
-
-  section {
-    background: white;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 3px 10px rgba(30,58,138,0.1);
-    margin-bottom: 3rem;
-  }
-
-  section h2 {
-    color: #1E3A8A;
-    margin-bottom: 1rem;
-  }
-
-  section p {
-    font-size: 1.05rem;
-  }
-
-  /* Pessoas ajudadas */
-  #pessoas ul {
-    list-style-type: none;
-    padding-left: 0;
-  }
-  #pessoas ul li {
-    padding: 6px 0;
-    border-bottom: 1px solid #dbe4f7;
-    font-size: 1.1rem;
-    color: #1e3a8a;
-  }
-
-  /* Área vídeos */
-  #videos .video-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    justify-content: center;
-  }
-
-  #videos .video-item {
-    flex: 1 1 320px;
-    background: #e7f0ff;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 1px 4px rgba(30,58,138,0.15);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #videos .video-item iframe {
-    border-radius: 6px;
-    width: 100%;
-    height: 180px;
-    margin-bottom: 1rem;
-  }
-
-  #videos .video-item h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.4rem;
-    color: #1E3A8A;
-    text-align: center;
-  }
-
-  #videos .video-item p {
-    font-size: 0.95rem;
-    color: #444;
-    text-align: center;
-  }
-
-  .doc-link {
-    display: block;
-    max-width: 400px;
-    margin: 2rem auto;
-    padding: 1rem 1.5rem;
-    background: #2563EB;
-    color: white;
-    text-align: center;
-    font-weight: 600;
-    border-radius: 6px;
-    text-decoration: none;
-    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.5);
-    transition: background-color 0.3s ease;
-  }
-
-  .doc-link:hover {
-    background: #1D4ED8;
-  }
-
-  footer {
-    margin-top: 3rem;
-    padding: 1.2rem;
-    text-align: center;
-    font-size: 0.9rem;
-    color: #666;
-    background: #e7f0ff;
-  }
-
-  @media (max-width: 640px) {
-    #videos .video-list {
-      flex-direction: column;
-      align-items: center;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projeto - Educação Inclusiva</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      background-color: #f0f4f8;
+      color: #333;
+      line-height: 1.6;
     }
-  }
-
-  /* Spoiler button */
-  .spoiler-btn {
-    display: inline-block;
-    background: #2563EB;
-    color: white;
-    padding: 0.6rem 1.2rem;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 600;
-    border: none;
-    margin-bottom: 1rem;
-    transition: background-color 0.3s ease;
-  }
-
-  .spoiler-btn:hover {
-    background: #1D4ED8;
-  }
-</style>
+    header {
+      background-color: #0b4d91;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    nav {
+      text-align: center;
+      margin: 1rem 0;
+    }
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #0b4d91;
+      font-weight: 600;
+    }
+    section {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+    h2 {
+      color: #0b4d91;
+    }
+    .people, .tutorials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .card {
+      background: #e6f0fa;
+      border-radius: 6px;
+      padding: 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .spoiler {
+      margin-top: 1rem;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: bold;
+      color: #0b4d91;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #0b4d91;
+      color: white;
+      margin-top: 2rem;
+    }
+    .link-btn {
+      display: inline-block;
+      background: #0b4d91;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      margin-top: 1rem;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>Projeto Educação Inclusiva e Acessibilidade</h1>
+    <p>Construindo caminhos para todos</p>
+  </header>
 
-<header>
-  <h1>Projeto de Extensão</h1>
-  <p>Educação Inclusiva e Acessibilidade - Construindo um Futuro Melhor</p>
-</header>
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#ajudadas">Algumas Pessoas Ajudadas</a>
+    <a href="#tutoriais">Tutoriais</a>
+    <a href="https://docs.google.com/document/d/1kZ94VZMfAM3iAgLBjwcY3FuzDc4_pdfjFstB-EcE0n0/edit?usp=sharing" target="_blank">Documentação</a>
+  </nav>
 
-<main>
-  <section id="projeto">
+  <section id="sobre">
     <h2>Sobre o Projeto</h2>
     <p>
-      Este projeto visa promover a educação inclusiva e a acessibilidade, contribuindo para a integração de pessoas com deficiência no ambiente educacional e social. Através de ações extensionistas, buscamos sensibilizar, capacitar e apoiar a comunidade para garantir direitos e igualdade de oportunidades.
+      Este projeto foi desenvolvido com o objetivo de promover a educação inclusiva e o acesso à tecnologia para pessoas com deficiência. Acreditamos que a inclusão começa com informação, respeito e acessibilidade. O projeto envolve ações diretas com a comunidade local, capacitação digital e apoio a indivíduos com diferentes necessidades.
     </p>
   </section>
 
-  <section id="pessoas">
+  <section id="ajudadas">
     <h2>Algumas Pessoas Ajudadas</h2>
-    <ul>
-      <li>Vitor Raphael, 24 anos</li>
-      <li>Felipe Gabriel, 18 anos</li>
-      <li>Thamires Tenorio, 24 anos</li>
-      <li>Antony da Cruz, 20 anos</li>
-      <li>Maya, 2 anos</li>
-      <li>Larissa Rodrigues, 20 anos</li>
-      <li>Marina Rodrigues, 26 anos</li>
-      <li>Maria do Carmo Noronha de Souza, 80 anos</li>
-      <li>Roberto Rodrigues, 22 anos</li>
-      <li>Lucca Yuji, 24 anos</li>
-    </ul>
+    <div class="people">
+      <div class="card">Vitor Raphael, 24 anos</div>
+      <div class="card">Felipe Gabriel, 18 anos</div>
+      <div class="card">Thamires Tenorio, 24 anos</div>
+      <div class="card">Antony da Cruz, 20 anos</div>
+      <div class="card">Maya, 2 anos</div>
+      <div class="card">Larissa Rodrigues, 20 anos</div>
+      <div class="card">Marina Rodrigues, 26 anos</div>
+      <div class="card">Maria do Carmo Noronha de Souza, 80 anos</div>
+      <div class="card">Roberto Rodrigues, 22 anos</div>
+      <div class="card">Lucca Yuji, 24 anos</div>
+    </div>
   </section>
 
-  <section id="videos-section">
-    <button class="spoiler-btn" onclick="toggleVideos()">Mostrar/Esconder Vídeos Educativos</button>
-    <section id="videos" style="display:none;">
-      <h2>Vídeos Educativos</h2>
-      <div class="video-list">
-        <article class="video-item">
-          <iframe src="https://www.youtube.com/embed/E5kxsmYwBLY" title="Inclusão Escolar e Educação Inclusiva" allowfullscreen></iframe>
-          <h3>Inclusão Escolar e Educação Inclusiva</h3>
-          <p>Vídeo explicativo sobre os conceitos e práticas de inclusão escolar no Brasil.</p>
-        </article>
-        <article class="video-item">
-          <iframe src="https://www.youtube.com/embed/l97-3gINw0s" title="Tecnologias Assistivas" allowfullscreen></iframe>
-          <h3>Tecnologias Assistivas</h3>
-          <p>Conheça os principais recursos tecnológicos que auxiliam a inclusão de pessoas com deficiência.</p>
-        </article>
-        <article class="video-item">
-          <iframe src="https://www.youtube.com/embed/VL9Y5LUFftI" title="Acessibilidade na Educação" allowfullscreen></iframe>
-          <h3>Acessibilidade na Educação</h3>
-          <p>Importância da acessibilidade no ambiente escolar para garantir a igualdade de oportunidades.</p>
-        </article>
-      </div>
-    </section>
+  <section id="tutoriais">
+    <h2>Tutoriais de Inclusão</h2>
+    <div class="spoiler">
+      <details>
+        <summary>Assistir vídeos de inclusão digital</summary>
+        <ul>
+          <li><a href="https://www.youtube.com/watch?v=MFsBUFBYp9k" target="_blank">Como usar leitores de tela</a></li>
+          <li><a href="https://www.youtube.com/watch?v=IXG0LkD8bSg" target="_blank">Acessibilidade no Windows</a></li>
+        </ul>
+      </details>
+    </div>
   </section>
 
-  <a href="https://docs.google.com/document/d/1kZ94VZMfAM3iAgLBjwcY3FuzDc4_pdfjFstB-EcE0n0/edit?usp=sharing" target="_blank" class="doc-link">
-    Acessar Documentação Completa do Projeto
-  </a>
-</main>
-
-<footer>
-  <p>Contato: <a href="mailto:viiniioliiveiira@gmail.com">viiniioliiveiira@gmail.com</a></p>
-  <p>© 2025 Projeto de Extensão - Educação Inclusiva e Acessibilidade</p>
-</footer>
-
-<script>
-  function toggleVideos() {
-    const videosSection = document.getElementById('videos');
-    if (videosSection.style.display === 'none') {
-      videosSection.style.display = 'block';
-    } else {
-      videosSection.style.display = 'none';
-    }
-  }
-</script>
-
+  <footer>
+    <p>Contato: <a href="mailto:viiniioliiveiira@gmail.com" style="color: #fff; text-decoration: underline;">viiniioliiveiira@gmail.com</a></p>
+    <p><a href="https://viiiniii.github.io/pxg/" target="_blank" class="link-btn">Acessar o Site Oficial</a></p>
+    <p>&copy; 2025 - Projeto de Extensão Universitária</p>
+  </footer>
 </body>
 </html>
